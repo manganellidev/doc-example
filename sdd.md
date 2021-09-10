@@ -1,6 +1,6 @@
 # App ABC
 
-## ![Stakeholders](./assets/stakeholders4.png) Stakeholders, Roles and Assets
+## Stakeholders, Roles and Assets
 
 | Role                         | Name            |
 |------------------------------|:---------------:|
@@ -12,11 +12,11 @@ Project location:
 
 [Github Project](https://)
 
-## ![Business purpose](./assets/business_purpose4.png) Business purpose
+## Business purpose
 This app is responsible for ...
 
 
-## ![Implementation](./assets/implementation4.png) Implementation summary / Design Overview
+## Implementation summary / Design Overview
 The microservice was written in Python, having modules with specific functions for communication, logging, and persistence.
 
 ### Package organization
@@ -70,7 +70,7 @@ The prices were extracted from the [aws costs](https://) and are assuming that t
 This cost increases in a monthly basis.
 
 
-## ![Libraries](./assets/libraries4.png) Main libraries used
+## Main libraries used
 Currently, the app depends on 11 public python libraries, among the most important ones are:
 
 - _aio-pika_ is used for the communication (AMQP);
@@ -97,7 +97,7 @@ ones to maintain. This is why it's important to add some relevant information on
 [img]
 
 
-## ![Communication](./assets/communication4.png) Communication methods
+## Communication methods
 As the app has no HTTP routes, messaging over AMQP is the exclusive communication method 
 and no other communication channel with the app is available. RabbitMQ was chosen 
 to be responsible for the messaging system. It works as a common platform among microservices to send and 
@@ -109,13 +109,13 @@ the direction represented by the arrows:
 
 [diagram]
 
-## ![Performance and Scalability](./assets/performance_scalability4.png) Scalability & Performance
+## Scalability & Performance
 The overall performance KPI for the app is 5000 requests per minute, which represents a throughput of 83 requests per second. 
 However, the _app was configured to process a throughput of 400 requests per second. To support this 
 throughput the app is being deployed with 5 instances, each one with 1024MB.
 
 
-## ![Tests](./assets/tests4.png) Test strategy
+## Test strategy
 The testing strategy was defined by having `unit`, `feature` and `performance` tests being executed at every build.
 
 ### Unit tests
@@ -142,13 +142,13 @@ Test results for builds can be found at:
 [Jenkins](https://)
 
 
-## ![Security](./assets/security4.png) Security aspects
+## Security aspects
 Currently there is no authorization concept for messaging operations, authenticated users can perform all operations with default scope.
 Also, the application has no HTTP routes available reducing attack vectors, all the communication 
 is done via RabbitMQ through internal AWS network.
 
 
-## ![Operations](./assets/operations4.png) Operations
+## Operations
 The main source of runtime information will be the application logs available on Application Log backing service, 
 based on the incoming messages, this backing service provides the event history and real-time analysis. Furthermore, 
 it is possible to check general status logs occurring during runtime. The logs might be of 3 severity levels: info, 
